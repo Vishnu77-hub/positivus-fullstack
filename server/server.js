@@ -9,7 +9,7 @@ import homeRouter from './routes/homeRoute.js';
 import subscriptionRoutes from './routes/subscriptionRoute.js';
 
 const app = express();
-const port = process.env.PORT || 5000 || 'https://positivus-fullstack.onrender.com';
+const port = process.env.PORT || 5000;
 
 // Connect to MongoDB and Cloudinary
 connectDB();
