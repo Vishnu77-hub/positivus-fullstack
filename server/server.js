@@ -24,6 +24,7 @@ app.use(cors({
       'http://localhost:3000',
       'http://localhost:5173',
       'https://positivus-fullstack-vishnu-js-projects.vercel.app',
+      'https://positivus-fullstack-rm2w.vercel.app/',
       'positivus-fullstack-rm2w-p3514b9zb-vishnu-js-projects.vercel.app', 
       'https://positivus-fullstack-rm2w-p3514b9zb-vishnu-js-projects.vercel.app/'
     ],
