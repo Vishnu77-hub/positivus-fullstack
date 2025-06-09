@@ -20,16 +20,15 @@ connectCloudinary();
 //     origin: ['http://localhost:3000', 'http://localhost:5173'] // Allow specific origins
 // }));
 app.use(cors({
-    origin: [
-      'http://localhost:3000',
-      'http://localhost:5173',
-      'https://positivus-fullstack-vishnu-js-projects.vercel.app',
-      'https://positivus-fullstack-rm2w.vercel.app/',
-      'positivus-fullstack-rm2w-p3514b9zb-vishnu-js-projects.vercel.app', 
-      'https://positivus-fullstack-rm2w-p3514b9zb-vishnu-js-projects.vercel.app/'
-    ],
-    credentials: true
-  }));
+  origin: [
+    'http://localhost:3000',
+    'http://localhost:5173',
+    'https://positivus-fullstack-vishnu-js-projects.vercel.app',
+    'https://positivus-fullstack-rm2w.vercel.app' // ✅ Correct Vercel admin URL
+  ],
+  credentials: true
+}));
+
   
   
 
