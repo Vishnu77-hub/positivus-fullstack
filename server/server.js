@@ -23,10 +23,11 @@ app.use(cors({
     origin: [
       'http://localhost:3000',
       'http://localhost:5173',
-      'https://your-frontend.vercel.app' // ✅ Add your deployed Vercel domain here
+      'https://positivus-fullstack-vishnu-js-projects.vercel.app' // ✅ Correct URL
     ],
     credentials: true
   }));
+  
   
 
 app.use(express.json());
