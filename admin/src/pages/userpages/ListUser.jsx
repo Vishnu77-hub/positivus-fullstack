@@ -90,9 +90,9 @@ const ListUser = ({ token }) => {
   };
   
 
-  // useEffect(() => {
-  //   fetchUsers();
-  // }, [sortOrder]);
+  useEffect(() => {
+    fetchUsers();
+  }, [sortOrder]);
 
   const filteredActiveUsers = activeUsers.filter(user =>
     (`${user.email} ${user.phone}`).toLowerCase().includes(searchTerm.toLowerCase())
@@ -153,15 +153,6 @@ const ListUser = ({ token }) => {
     doc.save(`${user.name.replace(/\s+/g, '_')}.pdf`);
   };
 
-  useEffect(() => {
-    const token = localStorage.getItem("token");
-    if (!token) {
-      navigate("/auth");
-    } else {
-      fetchUsers();
-    }
-  }, [sortOrder]);
-  
   return (
     <div className="p-4 max-w-7xl mx-auto">
       <div className="mb-4 flex flex-col md:flex-row justify-between items-center gap-4">
