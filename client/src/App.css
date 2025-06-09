@@ -1,0 +1,28 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.sidebar {
+  @apply w-64 bg-indigo-800 text-white transition-all duration-200;
+  &.open {
+    @apply translate-x-0;
+  }
+}
+
+.data-table {
+  @apply min-w-full divide-y divide-gray-200;
+  th {
+    @apply px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider;
+  }
+  td {
+    @apply px-6 py-4 whitespace-nowrap text-sm text-gray-500;
+  }
+}
+
+.admin-layout {
+  @apply flex h-screen overflow-hidden;
+  .main-content {
+    @apply flex-1 overflow-auto;
+  }
+}
+

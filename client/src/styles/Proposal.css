@@ -1,0 +1,97 @@
+
+.proposal .row {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 20px 15px;
+    background: #F3F3F3;
+    border-radius: 45px;
+}
+
+.proposal button{
+display: flex;
+flex-direction: row;
+align-items: flex-start;
+padding: 20px 35px;
+background: #191A23;
+border-radius: 14px;
+color: #F3F3F3;
+}
+
+
+.proposal-img img{
+position: absolute;
+left: 110px;
+top: -200px;
+}
+
+@media(max-width:800px){
+    .proposal-img{
+        display: none;
+    }
+    .proposal .row{
+        padding: 0px 0px;
+    }
+    .proposal button{
+        padding: 20px 45px;
+    }
+    .box1{
+        text-align: start;
+    }
+    p{
+        font-size: medium;
+    }
+}
+@media(max-width:1100px){
+    .proposal-img img{
+        left: 0px;
+    }
+}
+
+@media(max-width:400px){
+    .proposal h3{
+        font-size: 24px;
+    }
+}
+
+/* Fade-in effect */
+.fade-in {
+    animation: fadeIn 1.2s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Button hover effect */
+.btn-animate {
+    transition: all 0.3s ease-in-out;
+}
+
+.btn-animate:hover {
+    background: #292B36;
+    transform: scale(1.05);
+}
+
+/* Image slide-in effect */
+.slide-in img {
+    animation: slideIn 1s ease-in-out;
+}
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateX(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}

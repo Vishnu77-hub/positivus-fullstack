@@ -1,0 +1,95 @@
+.subscription {
+    display: flex;
+    gap: 40px;
+    align-items: center;
+    flex-wrap: wrap;
+    text-align: left;
+    justify-content: start;
+}
+
+.subscription h3 {
+    background-color: #B9FF66;
+    padding: 5px 10px;
+    border-radius: 7px;
+}
+
+.subscription-box {
+    background: #ffffff;
+    border-radius: 45px;
+    color: black;
+    max-width: 600px;
+    /* height: 606px; */
+    /* padding-bottom: clamp(5rem,7vw,11rem); */
+    padding: 5vh;
+    justify-content: center;
+   
+}
+
+/* .custom-input { */
+    /* width: 40%;
+    padding: 18px;
+    font-size: 18px;
+    border: 1px solid #191A23;
+    border-radius: 18px;
+    background-color: white;
+    color: black;
+    outline: none;
+    transition: border-color 0.3s ease;
+  }
+  
+  .custom-input:focus {
+    border: 5px solid #B9FF66;
+    box-shadow: none; /* remove blue shadow */
+  /* } */
+
+  /* .subscribe-btn {
+    background-color: #B9FF66;
+    color: black;
+    padding: 10px 20px;
+    font-size: 18px;
+    border: none;
+    border-radius: 18px;
+    width: 40%;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .subscribe-btn:hover {
+    background-color: #A2EB59;
+  } */
+  
+
+@media (max-width: 1050px) {
+    .subscription {
+        flex-direction: column;
+        text-align: center;
+        justify-content: center;
+        gap: 8px;
+    }
+
+    .subscription h3,
+    .subscription-box h3{
+        font-size: x-large;
+    }
+}
+
+@media (max-width: 350px) {
+    .subscription h3,
+    .subscription-box h3{
+        font-size: large;
+        padding-bottom: 0;
+        margin-bottom: 0;
+    }
+}
+
+@media (max-width: 800px){
+    .subscription-box input,
+    .subscription-box button {
+        width: 100% !important;
+        font-size: medium !important;
+    }
+    .subscription-box {
+        margin: 0 auto;
+    }
+
+}

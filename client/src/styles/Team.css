@@ -1,0 +1,82 @@
+.team{
+    display: flex;
+    gap: 40px;
+    align-items: center;
+    flex-wrap: wrap;
+    text-align: left;
+    justify-content: start;
+}
+.team h3 {
+    background-color: #B9FF66;
+    padding: 5px 10px;
+    border-radius: 7px;
+}
+
+.team p {
+    max-width: 580px;
+    margin: 0;
+}
+
+.team-box .box1{
+box-sizing: border-box;
+
+display: flex;
+flex-direction: column;
+align-items: flex-start;
+padding: 20px 20px;
+/* gap: 10px; */
+width: 387px;
+/* height: 331px; */
+
+/* width:93.5vw; */
+/* width: auto;
+height: auto; */
+background: #FFFFFF;
+border: 1px solid #191A23;
+box-shadow: 0px 5px 0px #191A23;
+border-radius: 45px;
+/* margin: 0 !important; */
+
+}
+
+.team-btn{
+    display: block;
+    margin-bottom: 12vw;
+}
+.team-btn button{
+    /* display: flex; */
+    /* flex-direction: row; */
+    /* display: inline; */
+    padding: 20px 80px;
+    background: #191A23;
+    border-radius: 14px;
+    color: #F3F3F3;
+    float: right;
+    display: block;
+    /* width: 100%; */
+    margin-bottom: 12%;
+    }
+
+@media (max-width: 800px) {
+    .team {
+        flex-direction: column;
+        text-align: center;
+        justify-content: center;
+    }
+    .team-btn button{
+        width: 100%;
+    }
+    .team-box .box1{
+        width: 100% !important;
+    }
+}
+@media(min-width: 1024px){
+    .profile{
+        width: 30%;
+    }
+}
+@media(max-width: 400px){
+    .profile{
+        width: 30% !important;
+    }
+}

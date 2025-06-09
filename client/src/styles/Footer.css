@@ -1,0 +1,157 @@
+.footer {
+    padding: clamp(1.5rem,5vw, 5rem);
+padding-bottom: 2px;
+    background: #191A23;
+    border-radius: 45px 45px 0px 0px;
+}
+
+.footer1 {
+    gap: 66px;
+}
+
+.footer-nav {
+    gap: 155px;
+    margin-bottom: 66px;
+}
+
+.footer-link {
+    text-decoration: none;
+    color: #ffffff !important;
+}
+
+.footer ul {
+    list-style: none;
+    /* Removes bullet points */
+    padding: 0;
+    /* Removes default padding */
+    margin: 0;
+    /* Removes default margin */
+    color: #ffffff !important;
+}
+
+.footer-link a {
+    color: white !important;
+    text-decoration: underline;
+}
+
+.footer-contact-info {
+    display: flex;
+    flex-direction: column;
+    padding: 0px;
+    gap: 27px;
+}
+
+.footer-contact-info p {
+    color: #ffffff !important;
+}
+
+.footer-contact-info h6 {
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 26px;
+    color: #000000;
+    background-color: #B9FF66;
+    display: inline;
+    border-radius: 10px;
+}
+
+.footer-contact-form {
+    padding: clamp(1rem,0.2vw,1.8rem);
+    justify-content: space-between;
+    gap: 5vw;
+    background: #292A32;
+    border-radius: 14px;
+}
+
+.footer-contact-form button {
+    display: flex;
+    padding: 22px 22px;
+    gap: 10px;
+    background: #B9FF66;
+    border-radius: 14px;
+    align-items: center;  /* Vertically centers text */
+  justify-content: center;
+
+}
+
+.footer-contact-form input {
+    display: flex;
+    flex-direction: row;
+    padding: 22px 30px; 
+    gap: 10px;
+    /* max-width: 285px; */
+    border: 1px solid gray;
+    border-radius: 14px;
+    background-color: transparent;
+    color: white;
+}
+
+.footer-contact-form input::placeholder {
+    color: rgba(255, 255, 255, 0.527);
+}
+
+.footer-contact-form input:focus {
+    background-color: transparent;
+    color: white;
+    border: #B9FF66;
+}
+.o-sicon{
+    display: inline-block;
+}
+.dup-sicon{
+    display: none;
+}
+
+
+.fade-in-up {
+    opacity: 0;
+    transform: translateY(100vh); /* Start from bottom of the screen */
+    animation: fadeInUp 3s ease-out forwards;
+  }
+  
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(100vh); /* Move up from outside the viewport */
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  
+
+@media (max-width:800px) {
+    .footer {
+        /* align-items: center; */
+        /* justify-items: center; */
+        text-align: center;
+    }
+    .o-sicon{
+        display: none;
+    }
+    .dup-sicon{
+        display: inline-block;
+    }
+    .footer ul {
+        text-align: center;
+        margin: 18px 0;
+    }
+
+    .footer-contact-info h6 {
+        margin-bottom: 10px;
+    }
+    .footer-contact-form{
+        text-align: center;
+    }
+    .footer-contact-form {
+        text-align: center !important;
+        /* align-items: center !important;
+        justify-content: center !important; */
+    }
+    .footer-contact-form button {
+        width: 100%;
+        margin-top: 2%;
+    }
+}

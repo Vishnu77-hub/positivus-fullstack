@@ -1,0 +1,61 @@
+.navbar .container{
+    --bs-gutter-x: 0;
+    --bs-gutter-y: 0;
+}
+.container,
+.container-lg,
+.container-md,
+.container-sm,
+.container-xl,
+.container-xxl {
+    /* max-width: 1264px !important; */
+    margin-top: 1.5%;
+}
+
+.navbar-toggler {
+    border: none !important;
+}
+
+.navbar-toggler:focus,
+.navbar-toggler:active {
+    box-shadow: none !important;
+}
+
+nav ul {
+    justify-content: space-between;
+    align-items: center;
+    padding: 0px;
+    gap: 25px;
+}
+
+nav .nav-link:hover {
+    background-color: #B9FF66;
+}
+
+/* Active state (green bg, black text) */
+.nav-link.active-tab {
+    background-color: #B9FF66 !important;
+    color: black !important;
+  }
+  
+  /* On hover of *any* .nav-link, remove active-tab's background */
+  .navbar-nav:hover .nav-link.active-tab {
+    background-color: transparent !important;
+    color: inherit !important;
+  }
+  
+.sticky-navbar {
+    position: sticky;
+    top: 0;
+    /* left: 50%; */
+    /* transform: translateX(-50%); */
+    width: 100%;
+    /* max-width: 1264px; */
+    background: #F7F7F7;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.325);
+    transition: all 0.3s ease-in-out;
+    z-index: 1000;
+    border-radius: 10px;
+}
+
+

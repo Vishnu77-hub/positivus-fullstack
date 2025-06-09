@@ -1,0 +1,47 @@
+.user-profile {
+    display: flex;
+    gap: 40px;
+    align-items: center;
+    flex-wrap: wrap;
+    text-align: left;
+    justify-content: start;
+}
+
+.user-profile h3 {
+    background-color: #B9FF66;
+    padding: 5px 10px;
+    border-radius: 7px;
+}
+
+.user-profile-box {
+    background: #ffffff;
+    border-radius: 45px;
+    color: black;
+    max-width: 500px;
+    /* height: 606px; */
+    /* padding-bottom: clamp(5rem,7vw,11rem); */
+    padding: 5vh;
+}
+
+
+
+@media (max-width: 1050px) {
+    .user-profile {
+        flex-direction: column;
+        text-align: center;
+        justify-content: center;
+        gap: 8px;
+    }
+
+    .user-profile h3,
+    .subscription-box h3{
+        font-size: x-large;
+    }
+}
+
+@media (max-width: 350px) {
+    .user-profile h3,
+    .subscription-box h3{
+        font-size: large;
+    }
+}

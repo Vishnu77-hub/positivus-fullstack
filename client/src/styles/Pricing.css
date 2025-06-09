@@ -1,0 +1,95 @@
+@media (max-width: 400px ){
+.pricing-section .pricing-p{
+    font-size: 3.8vw !important;
+}
+.pricing-section h1{
+    font-size: 35px !important;
+}
+}
+/* .pricing-p{
+  width: 2%;
+} */
+.pricing-plan .plan-box{
+    border: 1px solid #191A23;
+    box-shadow: 0px 5px 0px #191A23;
+    border-radius: 45px;
+    padding: 40px 48px !important;
+    padding-bottom: 80px !important;
+}
+
+.pricing-banner{
+  width: 15%;
+}
+
+.pricing-plan {
+    display: flex;
+    gap: 60px;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+  
+  /* Mobile view: stack vertically */
+  @media (max-width: 768px) {
+    .pricing-plan {
+      flex-direction:column;
+      justify-content: center;
+      align-items: center;
+    }
+  
+    .plan-box {
+      width: 100%;
+    }
+  }
+
+.plan-box{
+  max-width: 390px;
+}
+
+.pricing-plan-btn button{
+    width: 100%;
+    border: #191A23 solid;
+    padding: 18px;
+    border-radius: 15px;
+    background-color: white;
+}
+
+.pricing-plan-btn button:hover{
+    background-color: #191A23;
+    color: white;
+}
+.pricing-benifits img{
+    width: 60px;
+}
+
+.faq-title span {
+  background-color: #B9FF66;
+  padding: 5px 10px;
+  border-radius: 7px;
+  white-space: nowrap;
+  /* Prevents text from breaking */
+}
+
+@media (max-width: 800px) {
+
+  /* lg breakpoint */
+  .faq-title {
+      flex-direction: column;
+      text-align: center;
+      justify-content: center;
+      line-height: 1px;
+  }
+  .faq-title h3{
+    line-height: 45px;
+  }
+}
+
+@media (max-width: 800px) {
+  .pricing-banner{
+    width: 20%;
+  }
+}
+@media (max-width: 426px) {
+  .pricing-banner{
+    width: 28%;
+  }
+}

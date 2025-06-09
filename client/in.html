@@ -1,0 +1,940 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Positivus</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="./assets/style.css">
+  </head>
+  <body>
+
+    <style>
+        @font-face {
+    font-family: SpaceGrotesk;
+    src: url('./fonts/SpaceGrotesk-Bold.ttf') format("truetype");
+    font-weight: bold;
+}
+
+@font-face {
+    font-family: SpaceGrotesk;
+    src: url('./fonts/SpaceGrotesk-Light.ttf') format("truetype");
+    font-weight: 300;
+}
+
+@font-face {
+    font-family: SpaceGrotesk;
+    src: url('./fonts/SpaceGrotesk-Medium.ttf') format("truetype");
+    font-weight: 400;
+}
+
+@font-face {
+    font-family: SpaceGrotesk;
+    src: url('./fonts/SpaceGrotesk-Regular.ttf') format("truetype");
+    font-weight: 500;
+}
+
+@font-face {
+    font-family: SpaceGrotesk;
+    src: url('./fonts/SpaceGrotesk-SemiBold.ttf') format("truetype");
+    font-weight: 600;
+}
+
+
+:root {
+    --primary-color: #B9FF66;
+    --secondary-color: #191A23;
+    --body-color: #F3F3F3;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: SpaceGrotesk;
+    background-color: white;
+}
+
+.navbar {
+    position: relative;
+    display: flex;
+    padding: 10px;
+    background-color: var(--body-color);
+    justify-content: space-around;
+    align-items: center;
+    box-shadow: 7px 5px 15px -4px rgba(0, 0, 0, 0.75);
+    -webkit-box-shadow: 7px 5px 15px -4px rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: 7px 5px 15px -4px rgba(0, 0, 0, 0.75);
+}
+
+.nav-items>ul>li {
+    position: relative;
+    display: inline;
+    list-style: none;
+    margin: 10px;
+    padding: 10px 20px;
+    cursor: pointer;
+}
+
+.nav-items>ul>li>a {
+    font-family: SpaceGrotesk;
+    color: var(--secondary-color);
+    text-decoration: none;
+}
+
+.nav-items>ul>li::after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 0.17rem;
+    background-color: var(--primary-color);
+    left: 0;
+    bottom: 0;
+    transform-origin: 0% 100%;
+    transform: scaleX(0);
+    transition: transform 0.3s ease;
+}
+
+.nav-items>ul>li:hover::after {
+    transform: scaleX(1);
+}
+
+.nav-logo a,
+.nav-button a {
+    color: var(--secondary-color);
+    list-style: none;
+    text-decoration: none;
+    display: flex;
+}
+
+.nav-logo {
+    font-size: 32px;
+}
+
+.nav-button {
+    background-color: transparent;
+    border-radius: 10px;
+    border: 1px solid var(--secondary-color);
+    position: relative;
+    display: inline-block;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.anim-layer {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    width: 0;
+    height: 100%;
+    background-color: var(--primary-color);
+    transition: width 0.3s ease, left 0.3s ease;
+}
+
+.nav-button:hover .anim-layer {
+    width: 100%;
+    left: 0;
+}
+
+.nav-button:hover a {
+    color: var(--secondary-color);
+}
+
+.nav-button a {
+    display: block;
+    padding: 10px 20px;
+    color: var(--secondary-color);
+    text-decoration: none;
+    position: relative;
+    z-index: 1;
+}
+
+#hamburger-menu,
+#mobile-menu {
+    display: none;
+}
+
+@media only screen and (max-width: 1052px) {
+    #mobile-menu {
+        background-color: var(--primary-color);
+        width: 100%;
+        height: 100vh;
+        position: fixed;
+        top: 0;
+        left: 0;
+        display: none;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        transition: transform 0.3s ease;
+        transform: translateX(-100%);
+    }
+
+    .mobile-nav-items>ul {
+        padding: 0px;
+    }
+
+    .mobile-nav-items>ul>li {
+        text-align: center;
+        position: relative;
+        list-style: none;
+        margin: 10px;
+        padding: 10px 20px;
+        cursor: pointer;
+    }
+
+    .mobile-nav-items>ul>li>a {
+        color: var(--secondary-color);
+        text-decoration: none;
+    }
+
+    .mobile-nav-items>ul>li::after {
+        content: "";
+        position: absolute;
+        width: 100%;
+        height: 0.17rem;
+        background-color: var(--body-color);
+        left: 0;
+        bottom: 0;
+        transform-origin: 0% 100%;
+        transform: scaleX(0);
+        transition: transform 0.3s ease;
+    }
+
+    .mobile-nav-items>ul>li:hover::after {
+        transform: scaleX(1);
+    }
+
+    .mobile-nav-button {
+        background-color: var(--secondary-color);
+        border-radius: 50px;
+        position: relative;
+        display: inline-block;
+        overflow: hidden;
+        cursor: pointer;
+        border: 2px solid var(--secondary-color);
+    }
+
+    .mobile-nav-button .anim-layer {
+        position: absolute;
+        top: 0;
+        left: 50%;
+        width: 0;
+        height: 100%;
+        background-color: var(--primary-color);
+        transition: width 0.3s ease, left 0.3s ease;
+    }
+
+    .mobile-nav-button:hover .anim-layer {
+        width: 100%;
+        left: 0;
+    }
+
+    .mobile-nav-button:hover a {
+        color: var(--secondary-color);
+    }
+
+    .mobile-nav-button a {
+        display: block;
+        padding: 10px 20px;
+        color: var(--body-color);
+        text-decoration: none;
+        position: relative;
+        z-index: 1;
+    }
+
+    .nav-items>ul,
+    .nav-button {
+        display: none;
+    }
+
+    #hamburger-cross {
+        display: block;
+        color: var(--secondary-color);
+        cursor: pointer;
+        font-size: 40px;
+        position: absolute;
+        top: 20px;
+        right: 26px;
+    }
+
+    #hamburger-menu {
+        display: block;
+        color: var(--secondary-color);
+        cursor: pointer;
+        font-size: 24px;
+    }
+}
+
+.heading {
+    display: flex;
+    align-items: center;
+}
+
+.footer-heading {
+    font-size: 20px;
+    display: inline-block;
+    color: var(--secondary-color);
+    background-color: var(--primary-color);
+    border-radius: 4px;
+}
+
+.heading p {
+    font-size: 14px;
+}
+
+/* Hero Section Start */
+
+.hero-section a{
+    padding: 20px 35px;
+    color: var(--body-color);
+    border-radius: 10px;
+    text-decoration: none;
+    background-color: var(--secondary-color);
+}
+
+.hero-section .hero-content h1 {
+    font-size: 60px;
+    font-weight: 500;
+}
+
+.hero-section .hero-content p {
+    font-size: 20px;
+    font-weight: 400;
+}
+
+/* Services Sectin Start */
+
+.services .services-card.services-card-one, .services .services-card.services-card-two {
+    background-color: var(--body-color);
+    border: 1px solid var(--secondary-color);
+    border-bottom: 3px solid var(--secondary-color);
+    border-radius: 25px;
+    padding: 25px;
+}
+
+.services .heading > h2, .working-process .heading > h2, .contact-us .heading > h2 {
+    font-size: 24px;
+    background-color: var(--primary-color);
+    line-height: 1;
+    height: 40px;
+    border-radius: 10px;
+    padding: 7px;
+}
+
+.services .services-card.services-card-two {
+    background-color: var(--primary-color);
+    /* padding: 34px 25px; */
+}
+
+.services .services-card a i{
+    color: var(--primary-color);
+    background-color: var(--secondary-color);
+    width: 30px;
+    height: 30px;
+    border-radius: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 10px;
+    transition: all 0.3s ease-in-out;
+}
+
+.services .services-card:hover a i {
+    rotate: -30deg;
+}
+
+.services-card img {
+    width: 100%;
+    height: 180px;
+}
+
+@media only screen and (max-width: 1000px) {
+    .services-card img {
+        width: 150px;
+        height: 150px;
+    }
+}
+
+.services .services-card a {
+    align-items: center;
+    color: var(--secondary-color);
+}
+
+/* Working Process Start */
+
+.working-process .accordion-item {
+    border: 1px solid var(--secondary-color);
+    border-bottom: 3px solid var(--secondary-color);
+    border-radius: 30px;
+    overflow: hidden;
+    /* padding: 20px; */
+    background-color: var(--body-color);
+}
+
+.working-process .accordion-item .accordion-button {
+    background-color: var(--body-color);
+    padding: 20px 40px;
+    border-bottom: 1px solid var(--secondary-color);
+}
+
+.working-process .accordion-item .accordion-collapse.collapse.show, .working-process .accordion-item .accordion-collapse.collapse.show {
+    background-color: var(--primary-color);
+    transition: all 0.2s ease-in-out;
+}
+
+.working-process .accordion-item .accordion-button:not(.collapsed) {
+    color: var(--secondary-color);
+    transition: all 0.2s ease-in-out;
+    background-color: var(--primary-color) !important;
+    box-shadow: none;
+}
+
+.working-process .accordion-item .accordion-button:focus {
+    box-shadow: none;
+}
+
+.working-process .accordion-item .accordion-collapse .accordion-body {
+    padding: 20px 40px;
+}
+
+.working-process .accordion-item .accordian-numbers {
+    font-size: 44px;
+    padding-right: 20px;
+}
+
+.accordion-button::after {
+    background-image: none;
+    font-family: "Font Awesome 6 Free";
+    content: "\f068";
+    height: 35px;
+    width: 35px;
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    border: 1px solid var(--secondary-color);
+    background-color: var(--body-color);
+    color: var(--secondary-color);
+}
+
+.accordion-button:not(.collapsed)::after {
+    background-image: none;
+    content: "\f067"; 
+}
+
+.working-process .accordion-item .collapsing {
+    transition: all 0.3s ease-in-out;
+  }
+  
+
+/* Contact Us Start */
+
+.contact-us  .contact-wrapper{
+    border-radius: 25px;  
+    padding: 40px 60px;
+    background-color: var(--body-color);
+}
+
+.contact-us  .contact-wrapper input, .contact-us  .contact-wrapper textarea {
+    background-color: white;
+    border: 1px solid var(--secondary-color);
+    border-radius: 10px;
+    padding: 6px 12px;
+}
+
+.contact-us  .contact-wrapper input:focus {
+    box-shadow: none;
+}
+
+.contact-bg {
+    position: absolute;
+    right: -190px;
+    width: 400px;
+}
+
+input[type="radio"] {
+    display: none; /* Hide the default radio button */
+  }
+  
+  .custom-radio {
+    height: 20px;
+    width: 20px;
+    border-radius: 50%;
+    border: 2px solid var(--secondary-color);
+    display: inline-block;
+    position: relative;
+    margin-right: 4px;
+  }
+  
+  input[type="radio"]:checked + label .custom-radio::before {
+    content: '';
+    height: 12px;
+    width: 12px;
+    background-color: var(--primary-color);
+    border-radius: 50%;
+    position: absolute;
+    top: 2px;
+    left: 2px;
+  }
+
+/* Footer Start */
+
+footer .row {
+    background-color: var(--secondary-color);
+    border-top-right-radius: 40px;
+    border-top-left-radius: 40px;
+}
+
+footer .social-icons a{
+    display: flex;
+    width: 30px;
+    height: 30px;
+    border-radius: 40px;
+    text-decoration: none;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+}
+
+footer .social-icons a i {
+    /* padding: 20px; */
+}
+
+footer .subscription {
+    padding: 60px 30px;
+    background: rgba(41, 42, 50, 1);
+    border-radius: 25px;
+}
+
+footer .subscription input, footer .subscription input:focus {
+    background-color: transparent;
+    border: 1px solid var(--body-color);
+    box-shadow: none;
+    padding: 10px 20px;
+}
+
+footer .subscription input[type='submit'] {
+    background-color: var(--primary-color);
+}
+
+footer .footer-info {
+    border-bottom: 2px solid var(--body-color);
+}
+    </style>
+    
+    <div class="navbar bg-white">
+        <div class="nav-logo">
+          <a href="#">
+            <img src="./assets/images/logo.png" alt="">
+          </a>
+        </div>
+        <div class="nav-items">
+          <ul class="my-0">
+            <li><a href="#"> Home </a></li>
+            <li><a href="#"> Services </a></li>
+            <li><a href="#"> Use Cases </a></li>
+            <li><a href="#"> Pricing </a></li>
+            <li><a href="#"> Blog </a></li>
+          </ul>
+        </div>
+        <div class="nav-button">
+          <div class="anim-layer"></div>
+          <a href="#">Request a Quote</a>
+        </div>
+        <div id="hamburger-menu">&#9776;</div>
+      </div>
+  
+      <div id="mobile-menu">
+        <div class="mobile-nav-items">
+          <ul>
+            <li><a href="#"> Home </a></li>
+            <li><a href="#"> Services </a></li>
+            <li><a href="#"> Use Cases </a></li>
+            <li><a href="#"> Pricing </a></li>
+            <li><a href="#"> Blog </a></li>
+          </ul>
+        </div>
+        <div class="mobile-nav-button">
+          <div class="anim-layer"></div>
+          <a href="#">Request a Quote</a>
+        </div>
+        <div id="hamburger-cross">&#10006;</div>
+      </div>
+
+      <main>
+        <section class="hero-section">
+            <div class="container mt-5">
+                <div class="row">
+                    <div class="col-lg-6 d-flex flex-column align-items-center">
+                        <div class="hero-content">
+                            <h1 class="mb-4">Navigating the digital landscape for success</h1>
+                            <img class="img-fluid d-block d-lg-none" src="./assets/images/Illustration.png" alt="">
+                            <p class="mb-5">Our digital marketing agency helps businesses grow and succeed online through a range of services including SEO, PPC, social media marketing, and content creation.</p>
+                            <a class="button w-100 d-inline-block text-center d-lg-inline" href="">Book a Consultation</a>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 d-none d-lg-block">
+                        <img class="img-fluid" src="./assets/images/Illustration.png" alt="">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="logo-section my-5 pt-5 py-lg-5">
+            <div class="container">
+                <div class="row">
+                    <div class="col-4 my-2 my-lg-0 col-lg-2 d-flex justify-content-center">
+                        <img src="./assets/images/Company-logo.png" alt="" srcset="">
+                    </div>
+                    <div class="col-4 my-2 my-lg-0 col-lg-2 d-flex justify-content-center">
+                        <img src="./assets/images/Company-logo-1.png" alt="" srcset="">
+                    </div>
+                    <div class="col-4 my-2 my-lg-0 col-lg-2 d-flex justify-content-center">
+                        <img src="./assets/images/Company-logo-2.png" alt="" srcset="">
+                    </div>
+                    <div class="col-4 my-2 my-lg-0 col-lg-2 d-flex justify-content-center">
+                        <img src="./assets/images/Company-logo-3.png" alt="" srcset="">
+                    </div>
+                    <div class="col-4 my-2 my-lg-0 col-lg-2 d-flex justify-content-center">
+                        <img src="./assets/images/Company-logo-4.png" alt="" srcset="">
+                    </div>
+                    <div class="col-4 my-2 my-lg-0 col-lg-2 d-flex justify-content-center">
+                        <img src="./assets/images/Company-logo-5.png" alt="" srcset="">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="services">
+            <div class="container">
+                <div class="row d-flex flex-nowrap flex-row">
+                    <div class="heading d-block text-center text-lg-start d-lg-flex align-items-lg-center mb-5">
+                        <h2 class="mb-0 d-inline-block mb-4 mb-lg-0">Services</h2>
+                        <p class="ps-4 mb-0">
+                            At our digital marketing agency, we offer a range of services to <br> help businesses grow and succeed online. These services include:</p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-6">
+                        <div class="services-card services-card-one d-none d-lg-block">
+                            <div class="row">
+                                <div class="col-lg-6 d-flex flex-column justify-content-between">
+                                    <h2>Search engine optimization</h2>
+                                    <a href="#" class="d-flex text-decoration-none">
+                                        <i class="fa-solid fa-arrow-right"></i>
+                                        <h6 class="mb-0">learn more</h6>
+                                    </a>
+                                </div>
+                                <div class="col-lg-6">
+                                    <img class="img-fluid" src="./assets/images/services-1.png" alt="">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="services-card services-card-two d-block d-lg-none p-5">
+                              <div class="col-lg-6 d-flex flex-column justify-content-between">
+                                  <h2>Pay-per-click
+                                      advertising</h2>
+                                      <div class="d-flex justify-content-between align-items-end">
+                                        <a href="#" class="d-flex text-decoration-none">
+                                          <i class="fa-solid fa-arrow-right"></i>
+                                        </a>
+                                        <img src="./assets/images/services-2.png" alt="">
+                                      </div>
+                              </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="services-card services-card-two d-none d-lg-block">
+                            <div class="row">
+                                <div class="col-lg-6 d-flex flex-column justify-content-between">
+                                    <h2>Pay-per-click
+                                        advertising</h2>
+                                    <a href="#" class="d-flex text-decoration-none">
+                                        <i class="fa-solid fa-arrow-right"></i>
+                                        <h6 class="mb-0">learn more</h6>
+                                    </a>
+                                </div>
+                                <div class="col-lg-6">
+                                    <img class="img-fluid" src="./assets/images/services-2.png" alt="">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="services-card services-card-one border-0 d-block d-lg-none p-5 mt-5">
+                          <h2>Let’s make things happen</h2>
+                          <p>Contact us today to learn more about how our digital marketing services can help your business grow and succeed online.</p>
+                          <a class="bg-dark text-white w-100 d-inline-block py-3 rounded-4 text-center text-decoration-none" href="">Get your proposal</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="working-process my-5">
+            <div class="container">
+                <div class="row">
+                    <div class="row d-flex flex-nowrap flex-row">
+                        <div class="heading d-block text-center text-lg-start d-lg-flex align-items-lg-center mb-5">
+                            <h2 class="mb-0 d-inline-block mb-4 mb-lg-0">Our Working Process </h2>
+                            <p class="ps-4 mb-0">Step-by-Step Guide to Achieving <br> Your Business Goals</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="accordion mt-2 mt-lg-5" id="accordionExample">
+                      <div class="accordion-item mb-4">
+                        <h2 class="accordion-header" id="headingOne">
+                            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                <span class="accordian-numbers">01</span> Consultation
+                            </button>
+                        </h2>
+                        <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+                            <div class="accordion-body">
+                              During the initial consultation, we will discuss your business goals and objectives, target audience, and current marketing efforts. This will allow us to understand your needs and tailor our services to best fit your requirements.    
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion-item mb-4">
+                        <h2 class="accordion-header" id="headingTwo">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                <span class="accordian-numbers">02</span> Research and Strategy Development
+                            </button>
+                        </h2>
+                        <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
+                            <div class="accordion-body">
+                              During the initial consultation, we will discuss your business goals and objectives, target audience, and current marketing efforts. This will allow us to understand your needs and tailor our services to best fit your requirements.    
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion-item mb-4">
+                        <h2 class="accordion-header" id="headingThree">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                                <span class="accordian-numbers">03</span> Implementation
+                            </button>
+                        </h2>
+                        <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
+                            <div class="accordion-body">
+                              During the initial consultation, we will discuss your business goals and objectives, target audience, and current marketing efforts. This will allow us to understand your needs and tailor our services to best fit your requirements.    
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion-item mb-4">
+                        <h2 class="accordion-header" id="headingFour">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                                <span class="accordian-numbers">04</span> Monitoring and Optimization
+                            </button>
+                        </h2>
+                        <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour" data-bs-parent="#accordionExample">
+                            <div class="accordion-body">
+                              During the initial consultation, we will discuss your business goals and objectives, target audience, and current marketing efforts. This will allow us to understand your needs and tailor our services to best fit your requirements.    
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion-item mb-4">
+                        <h2 class="accordion-header" id="headingFive">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
+                                <span class="accordian-numbers">05</span> Reporting and Communication
+                            </button>
+                        </h2>
+                        <div id="collapseFive" class="accordion-collapse collapse" aria-labelledby="headingFive" data-bs-parent="#accordionExample">
+                            <div class="accordion-body">
+                              During the initial consultation, we will discuss your business goals and objectives, target audience, and current marketing efforts. This will allow us to understand your needs and tailor our services to best fit your requirements.    
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion-item mb-4">
+                        <h2 class="accordion-header" id="headingSix">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSix" aria-expanded="false" aria-controls="collapseSix">
+                                <span class="accordian-numbers">06</span> Continual Improvement
+                            </button>
+                        </h2>
+                        <div id="collapseSix" class="accordion-collapse collapse" aria-labelledby="headingSix" data-bs-parent="#accordionExample">
+                            <div class="accordion-body">
+                              During the initial consultation, we will discuss your business goals and objectives, target audience, and current marketing efforts. This will allow us to understand your needs and tailor our services to best fit your requirements.    
+                            </div>
+                        </div>
+                    </div>                    
+                      </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="contact-us my-5">
+            <div class="container">
+                <div class="row">
+                    <div class="row d-flex flex-nowrap flex-row">
+                        <div class="heading d-block text-center text-lg-start d-lg-flex align-items-lg-center mb-5">
+                            <h2 class="mb-0 d-inline-block mb-4 mb-lg-0">Contact Us</h2>
+                            <p class="ps-4 mb-0">Connect with Us: Let's Discuss Your <br> Digital Marketing Needs</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="contact-wrapper position-relative overflow-hidden">
+                    <div class="row">
+                        <div class="col-lg-8">
+                            <form action="">
+                                <div class="d-flex justify-content-around justify-content-lg-start">
+                                    <div class="d-flex align-items-center">
+                                      <div class="radio-button-container">
+                                        <input type="radio" id="say-hi" name="greeting" checked>
+                                        <label class="d-flex align-items-center" for="say-hi">
+                                          <span class="custom-radio"></span> Say Hi
+                                        </label>
+                                      </div>
+                                    </div>
+                                    <div class="ms-3 d-flex align-items-center">
+                                      <div class="radio-button-container">
+                                        <input type="radio" id="get-a-quote" name="greeting">
+                                        <label class="d-flex align-items-center" for="get-a-quote">
+                                          <span class="custom-radio"></span> Get a Quote
+                                        </label>
+                                      </div>
+                                    </div>
+                                </div>
+                                <label class="mt-3" for="">Name</label> <br>
+                                <input class="form-control" type="text" placeholder="Name">
+                                
+                                <label class="mt-3" for="">Email</label> <br>
+                                <input class="form-control" type="email" placeholder="Name">
+
+                                <label class="mt-3" for="">Message</label> <br>
+                                <textarea class="form-control" name="" id="" placeholder="Message"></textarea>
+
+                                <input class="form-control mt-4 bg-dark text-white" type="submit" value="Send Message">
+                            </form>
+                        </div>
+                            <img class="contact-bg d-none d-lg-block" src="./assets/images/contact-bg.png" alt="">
+                        
+                    </div>
+                </div>
+            </div>
+        </section>
+      </main>
+
+      <footer>
+        <div class="container">
+          <div class="row p-5">
+            <div class="col-lg-12">
+                <div class="row">
+                  <div class="col-lg-3 text-center text-lg-start mb-5 mb-lg-0">
+                    <img src="./assets/images/footer-logo.png" alt="">
+                  </div>
+                  <div class="col-lg-6">
+                    <ul class="d-flex flex-column flex-lg-row text-center text-lg-start ps-0">
+                      <li class="list-unstyled mb-3">
+                        <a class="text-white px-3" href="#">About Us</a>
+                      </li>
+                      <li class="list-unstyled mb-3">
+                        <a class="text-white px-3" href="#">Services</a>
+                      </li>
+                      <li class="list-unstyled mb-3">
+                        <a class="text-white px-3" href="#">Use Cases</a>
+                      </li>
+                      <li class="list-unstyled mb-3">
+                        <a class="text-white px-3" href="#">Pricing</a>
+                      </li>
+                      <li class="list-unstyled mb-0 mb-lg-3">
+                        <a class="text-white px-3" href="#">Blog</a>
+                      </li>
+                    </ul>
+                  </div>
+                  <div class="col-lg-3 social-icons d-none d-lg-block">
+                    <ul class="d-flex justify-content-end">
+                      <li class="list-unstyled px-2">
+                        <a href="#">
+                          <i class="fa-brands text-dark fa-facebook-f"></i>
+                        </a>
+                      </li>
+                      <li class="list-unstyled px-2">
+                        <a href="#">
+                          <i class="fa-brands text-dark fa-linkedin-in"></i>
+                        </a>
+                      </li>
+                      <li class="list-unstyled px-2">
+                        <a href="#">
+                          <i class="fa-brands text-dark fa-twitter"></i>
+                        </a>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+                <div class="row pb-4 pt-3 py-lg-5 py-lg-5 footer-info text-center text-lg-start">
+                  <div class="col-lg-6">
+                    <h2 class="footer-heading px-2">Contact Us:</h3>
+                    <p class="text-white">Email: <a class="text-white text-decoration-none" href="mailto:info@positivus.com">info@positivus.com</a></p>
+                    <p class="text-white">Phone: <a class="text-white text-decoration-none" href="tel:5555678901">555 567 8901</a></p>
+                    <p class="text-white">Address: 1234 Main St <br>
+                    Moonstone City, Stardust State 12345</p>
+                  </div>
+                  <div class="col-lg-6">
+                    <div class="row subscription">
+                      <div class="col-lg-6">
+                        <input class="form-control" placeholder="Email" type="email">
+                      </div>
+                      <div class="col-lg-6 mt-3 mt-lg-0">
+                        <input class="form-control" type="submit" value="Subscribe to news">
+                      </div>
+                    </div>
+                  </div>
+                  <div class="social-icons d-block d-lg-none pt-5">
+                    <ul class="ps-0 d-flex justify-content-center">
+                      <li class="list-unstyled">
+                        <a href="#">
+                          <i class="fa-brands text-dark fa-facebook-f"></i>
+                        </a>
+                      </li>
+                      <li class="list-unstyled ps-3">
+                        <a href="#">
+                          <i class="fa-brands text-dark fa-linkedin-in"></i>
+                        </a>
+                      </li>
+                      <li class="list-unstyled ps-3">
+                        <a href="#">
+                          <i class="fa-brands text-dark fa-twitter"></i>
+                        </a>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+                <div class="row pt-5">
+                  <div class="col-lg-12 d-flex flex-column flex-lg-row">
+                    <p class="text-white mb-0 text-center text-lg-start mb-3 mb-lg-0">© 2023 Positivus. All Rights Reserved.</p>
+                    <a class="text-white ps-4 text-center text-lg-start" href="#">Privacy Policy</a>
+                  </div>
+                </div>
+            </div>
+          </div>
+        </div>
+      </footer>
+      <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
+    <script src="./assets/script.js"></script>
+    <script>var getHubergerIcon = document.getElementById("hamburger-menu");
+        var getHubergerCrossIcon = document.getElementById("hamburger-cross");
+        var getMobileMenu = document.getElementById("mobile-menu");
+        
+        getHubergerIcon.addEventListener("click", function () {
+            getMobileMenu.style.display = "flex";
+            setTimeout(function () {
+                getMobileMenu.style.transform = "translateX(0%)"; // Slide in the menu
+            }, 50); // Add a small delay for better transition effect
+        });
+        
+        getHubergerCrossIcon.addEventListener("click", function () {
+            getMobileMenu.style.transform = "translateX(-100%)"; // Slide out the menu
+            setTimeout(function () {
+                getMobileMenu.style.display = "none";
+            }, 300); // Wait for the transition to end before hiding
+        });
+        
+        // Check if screen size changes to desktop view and hide mobile menu
+        window.addEventListener("resize", function () {
+            if (window.innerWidth > 770) {
+                getMobileMenu.style.display = "none";
+            }
+        });</script>
+  </body>
+</html>

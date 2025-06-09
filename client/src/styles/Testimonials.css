@@ -1,0 +1,185 @@
+.testimonials {
+    display: flex;
+    gap: 40px;
+    align-items: center;
+    flex-wrap: wrap;
+    text-align: left;
+    justify-content: start;
+}
+
+.testimonials h3 {
+    background-color: #B9FF66;
+    padding: 5px 10px;
+    border-radius: 7px;
+    /* white-space: nowrap; */
+}
+
+.testimonials p {
+    max-width: 580px;
+    margin: 0;
+}
+
+.testimonials-box {
+    background: #191A23;
+    border-radius: 45px;
+    color: #ffffff;
+    max-width: 1240px;
+    /* height: 606px; */
+    padding-bottom: clamp(5rem,7vw,11rem);
+    .single-testimonial {
+        max-width: 606px;
+        max-height: 237.95px;
+        .client-content {
+            background: #191A23;
+            border: 2px solid #B9FF66;
+            border-radius: 45px;
+            max-width: 600px;
+            padding: clamp(1.3rem, 5.5vw, 3rem);
+            text-align: start;
+        }
+    }
+}
+
+
+.bubble-icon {
+    position: absolute;
+    width: 84px;
+    height: 47px;
+    bottom: -43px;
+    left: 85px;
+    transform: translateX(-50%);
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+
+.slick-dots {
+    position: absolute;
+    bottom: -13.5% !important;
+    display: block;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    text-align: center;
+    position: relative;
+}
+
+/* Custom Arrows */
+.slick-arrow {
+    position: absolute;
+    bottom: -15%;
+    font-size: 18px;
+    color: white;
+    border-radius: 50%;
+    width: 0px;
+    height: 35px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    z-index: 10;
+    transition: background 0.3s ease-in-out;
+}
+/* Left Arrow */
+.prev-arrow {
+    left: 20%;
+    color: white !important;
+    opacity: 100%;
+    transform: rotate(180deg);
+}
+
+/* Right Arrow */
+.next-arrow {
+    right: 20%;
+}
+
+/* Hover Effect */
+.slick-arrow:hover {
+    background: #008000;
+}
+
+/* Slider */
+.wrapper {
+    width: 100%;
+    padding-top: 20px;
+    text-align: center;
+}
+
+.singlecarousel {
+    width: 100%;
+    margin: 0px auto;
+}
+
+
+/* Style for the Slick Dots */
+.testimonials-box .slick-dots li button:before {
+    font-size: 20px;
+    content: "";
+    width: 15px;
+    height: 15px;
+    background-image: url(../../public/assets/Vector.svg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    display: inline-block;
+    filter: brightness(0) invert(1); /* Makes inactive dots white */
+    opacity: 1;
+}
+
+/* Active dot remains original color */
+.testimonials-box .slick-dots li.slick-active button:before {
+    filter: none; /* Removes white color filter */
+}
+
+.client-info{
+    text-align: start;
+}
+.client-info h4{
+    color: #B9FF66;
+}
+
+.client-info p{
+    color: #ffffff;
+}
+/* Responsive padding for the p tag */
+.responsive-text {
+    padding: 10px 20px;
+}
+
+@media (max-width: 768px) {
+    .responsive-text {
+        padding: 5px 10px;
+    }
+}
+
+@media (max-width: 480px) {
+    .responsive-text {
+        padding: 2px 5px;
+    }
+}
+
+/* Responsive padding for client-content */
+.responsive-client-content {
+    padding: 45px 52px;
+}
+
+@media (max-width: 768px) {
+    .responsive-client-content {
+        padding: 30px 35px;
+    }
+}
+
+@media (max-width: 480px) {
+    .responsive-client-content {
+        padding: 20px 25px;
+    }
+}
+
+@media (max-width: 800px) {
+    .testimonials {
+        flex-direction: column;
+        text-align: center;
+        justify-content: center;
+    }
+}

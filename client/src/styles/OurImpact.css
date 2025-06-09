@@ -1,0 +1,157 @@
+.ourimpact {
+    display: flex;
+    gap: 40px;
+    align-items: center;
+    flex-wrap: wrap;
+    text-align: left;
+    justify-content: start;
+}
+
+.outimpact h2 {
+    background-color: #B9FF66;
+    padding: 5px 10px;
+    border-radius: 7px;
+}
+
+.outimpact p {
+    max-width: 580px;
+    margin: 0;
+}
+
+/* Container */
+.stats-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    text-align: center;
+    position: relative;
+    padding-top: 20px;
+}
+
+/* Top Border with Curved Ends */
+.stats-border {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+
+}
+
+/* Each Stat Item */
+.stats-item {
+    /* padding: 0 30px; */
+    position: relative;
+    /* border-top: 2px black solid; */
+}
+
+/*.stats-box {
+    width: 200px;
+    height: 100px;
+    position: relative;
+    /* border-top: 2px solid black; */
+/* border-left: 4px solid black; */
+/* border-right: 4px solid black; 
+    border-radius: 25px; /* Round only top-left and top-right corners 
+    outline: 2px solid black;
+} */
+
+
+.stats-box {
+    width: 15rem;
+    height: 100px;
+    background-color: white;
+    position: relative;
+}
+
+@media (max-width: 600px) {
+    .stats-box {
+        width: 10rem;
+    }
+}
+
+.stats-box::before,
+.stats-box::after {
+    content: "";
+    position: absolute;
+    width: 2px;
+    height: 20%;
+    /* Half of the height */
+    background-color: black;
+    top: 0px;
+    border-radius: 20px !important;
+}
+
+.stats-box::before {
+    left: 0;
+    border-top-left-radius: 10px;
+}
+
+.stats-box::after {
+    right: 0;
+    border-top-right-radius: 10px;
+}
+
+.stats-box .top-border {
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    background-color: black;
+    top: 0;
+    left: 0;
+    border-radius: 25px !important;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+
+/* .stats-box::before,
+.stats-box::after {
+    content: "";
+    position: absolute;
+    width: 2px;
+    height: 15%;
+    background-color: black;
+    top: 12px;
+}
+
+.stats-box::before {
+    left: 0;
+    border-top-left-radius: 10px;
+}
+
+.stats-box::after {
+    right: 0;
+    border-top-right-radius: 10px;
+} */
+
+/* Number Styling */
+.stats-value {
+    font-weight: bold;
+    font-size: 24px;
+}
+
+/* Label Styling */
+.stats-label {
+    color: gray;
+    font-size: 14px;
+    display: block;
+}
+
+/* Vertical Divider */
+.stats-divider {
+    position: absolute;
+    top: 50%;
+    right: 0;
+    height: 50%;
+    border-right: 2px solid black;
+    transform: translateY(-50%);
+}
+
+
+
+@media (max-width: 800px) {
+    .ourimpact {
+        flex-direction: column;
+        text-align: center;
+        justify-content: center;
+    }
+}
