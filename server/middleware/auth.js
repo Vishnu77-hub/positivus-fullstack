@@ -1,4 +1,4 @@
-// import jwt from 'jsonwebtoken';
+import jwt from 'jsonwebtoken';
 
 // const auth = (req, res, next) => {
 //   const authHeader = req.header("Authorization");
@@ -14,9 +14,6 @@
 //     res.status(401).json({ message: "Invalid token" });
 //   }
 // };
-
-// export default auth;
-
 
 const auth = (req, res, next) => {
   const authHeader = req.header("Authorization");
@@ -34,3 +31,9 @@ const auth = (req, res, next) => {
     res.status(401).json({ message: "Invalid token" });
   }
 };
+
+
+export default auth;
+
+
+
