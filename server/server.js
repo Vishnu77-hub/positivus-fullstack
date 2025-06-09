@@ -16,9 +16,18 @@ connectDB();
 connectCloudinary();
 
 // Set up CORS
+// app.use(cors({
+//     origin: ['http://localhost:3000', 'http://localhost:5173'] // Allow specific origins
+// }));
 app.use(cors({
-    origin: ['http://localhost:3000', 'http://localhost:5173'] // Allow specific origins
-}));
+    origin: [
+      'http://localhost:3000',
+      'http://localhost:5173',
+      'https://your-frontend.vercel.app' // ✅ Add your deployed Vercel domain here
+    ],
+    credentials: true
+  }));
+  
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
