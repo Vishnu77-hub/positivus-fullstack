@@ -23,8 +23,10 @@ app.use(cors({
   origin: [
     'http://localhost:3000',
     'http://localhost:5173',
+    'https://positivus-fullstack.vercel.app/',
     'https://positivus-fullstack-vishnu-js-projects.vercel.app',
-    'https://positivus-fullstack-rm2w.vercel.app' // ✅ Correct Vercel admin URL
+    'https://positivus-fullstack-rm2w.vercel.app',// ✅ Correct Vercel admin URL
+    'https://positivus-fullstack-jlcemmj8g-vishnu-js-projects.vercel.app/', 
   ],
   credentials: true
 }));
