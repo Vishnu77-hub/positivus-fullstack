@@ -28,7 +28,6 @@ const PricingTable = ({ token }) => {
 // fetch data from backend -------------------------------------------------------
   const fetchListPricing = async () => {
     try {
-      const token = localStorage.getItem("token");
       const { data } = await axios.get(`${backendUrl}/api/pricing/listPricingTable`);
       if (data.success) setListPricing(data.pricing);
       else toast.error(data.message);
@@ -41,7 +40,6 @@ const PricingTable = ({ token }) => {
 // Enavle/Disable -------------------------------------------------------------------------------
   const toggleEnable = async (id, enableStatus) => {
     try {
-      const token = localStorage.getItem("token");
       const { data } = await axios.put(
         `${backendUrl}/api/pricing/togglePricingEnable`,
         { id, isEnabledPricing: enableStatus },
@@ -64,7 +62,6 @@ const PricingTable = ({ token }) => {
   // remove data ----------------------------------------------------------------------------------------------------
   const removePricing = async (id) => {
     try {
-      const token = localStorage.getItem("token");
       const { data } = await axios.post(
         `${backendUrl}/api/pricing/removePricing`,
         { id },
@@ -83,7 +80,6 @@ const PricingTable = ({ token }) => {
   // Data submit -----------------------------------------------------------------------------------------
   const submitUpdate = async () => {
     try {
-      const token = localStorage.getItem("token");
       const form = new FormData();
       form.append('pricingId', editingItem._id);
       form.append('planName', editingItem.planName);
